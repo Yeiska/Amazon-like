@@ -38,13 +38,17 @@ function select() {
         name: "id",
         type: "input",
         message: "Which is the id for the item you would like to buy?",
-    },
-    {
-        name: "quantity",
-        type: "input",
         message: "How many would you like to buy?",
+        validate: function(value) {
+            console.log(value);
+            if (isNaN(value) === false) {
+              return true;
+            }
+            return false;
+          }
     }).then(function () {
         var query = "SELECT id FROM products"
+        console.log(query);
         connection.query(query, function (err, res) {
                 console.log(res.id);
         })
