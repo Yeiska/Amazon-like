@@ -47,7 +47,7 @@ function showCustomer() {
         inquirer.prompt(questions).then(function (res1) {
             var select = (res1.item_id) - 1;
             var qty = parseInt(res1.quantity);
-            var total = parseFloat((res[select].price + qty).toFixed(2));
+            var total = parseFloat((res[select].price * qty).toFixed(2));
             if (x < qty) {
                 console.log(x);
                 console.log("Sorry Insuficiente on stock!!");
@@ -57,7 +57,7 @@ function showCustomer() {
                 connection.query("UPDATE products SET ? WHERE ?",
                     [
                         {
-                            stock_quantity: ((res.stock_quantity) - qty)
+                            stock_quantity: ((res[select].stock_quantity) - qty)
                         },
                         {
                             id: res1.id
@@ -67,7 +67,7 @@ function showCustomer() {
                         reprompt();
                     }
                 );
-               
+                               
             }            
         }
         )
