@@ -23,8 +23,6 @@ If the user types in a quantity that is larger than the current available quanti
 
 ### Node.js
 ### JavaScript
-### Bootstrap
-### CSS
 ### MySql
 
 # You can see the code on the following link
