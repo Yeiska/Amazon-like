@@ -19,3 +19,14 @@ If the user types in a quantity that is larger than the current available quanti
 ![updated in the database](img/insuficiente.png)
 ![updated in the database](img/thanks.png)
 
+# Technologies used:
+
+### Node.js
+### JavaScript
+### Bootstrap
+### CSS
+### MySql
+
+# You can see the code on the following link
+https://github.com/Yeiska/Amazon-like
+

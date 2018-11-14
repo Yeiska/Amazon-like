@@ -53,7 +53,7 @@ function showCustomer() {
                 console.log("Sorry Insuficiente on stock!!");
                 return reprompt();
             } else {
-                              
+
                 connection.query("UPDATE products SET ? WHERE ?",
                     [
                         {
@@ -67,8 +67,7 @@ function showCustomer() {
                         reprompt();
                     }
                 );
-                               
-            }            
+            }
         }
         )
     }
@@ -76,17 +75,16 @@ function showCustomer() {
 }
 
 
-function reprompt(){
+function reprompt() {
     inquirer.prompt([{
-      type: "confirm",
-      name: "reply",
-      message: "Would you like to purchase another item?"
-    }]).then(function(ans){
-      if(ans.reply){
-        showCustomer();
-      } else{
-        console.log("See you soon!");
-      }
+        type: "confirm",
+        name: "reply",
+        message: "Would you like to purchase another item?"
+    }]).then(function (ans) {
+        if (ans.reply) {
+            showCustomer();
+        } else {
+            console.log("See you soon!");
+        }
     });
-  }
-  
+}
